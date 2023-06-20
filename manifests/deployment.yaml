@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Deploytry3
+  labels:
+    app: Deploytry3
+  namespace: namespace-workflow-1687294329645
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Deploytry3
+  template:
+    metadata:
+      labels:
+        app: Deploytry3
+    spec:
+      containers:
+        - name: Deploytry3
+          image: acrworkflow1687294329645.azurecr.io/image-workflow-1687294329645:latest
+          ports:
+            - containerPort: 8000
